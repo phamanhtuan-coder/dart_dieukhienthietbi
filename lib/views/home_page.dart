@@ -1,7 +1,9 @@
 // home_page.dart
+import 'package:dieukhienthietbi/models/device.dart';
 import 'package:dieukhienthietbi/views/widgets/device_card.dart';
 import 'package:flutter/material.dart';
-import '../models/Device.dart';
+
+import 'chart_page.dart'; // Import the ChartPage here
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +24,6 @@ class _HomePageState extends State<HomePage> {
       if (index != -1) {
         devices[index] = updatedDevice;
       }
-      // Later, you can add Firebase code here to sync device state with Firebase
     });
   }
 
@@ -58,11 +59,26 @@ class _HomePageState extends State<HomePage> {
             children: [
               IconButton(
                 icon: const Icon(Icons.analytics),
-                onPressed: () {},
+                onPressed: () {
+                  // Navigate to ChartPage, passing the list of devices
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChartPage(devices: devices),
+                    ),
+                  );
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.device_hub),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                  ),
+                  );
+                },
               ),
               const SizedBox(width: 48),
               IconButton(
@@ -80,7 +96,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         color: Colors.grey[100],
         child: ListView.builder(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           itemCount: devices.length,
           itemBuilder: (context, index) {
             final device = devices[index];

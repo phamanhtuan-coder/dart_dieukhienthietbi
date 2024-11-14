@@ -1,6 +1,7 @@
 
+import 'package:dieukhienthietbi/views/widgets/custom_slider.dart';
 import 'package:flutter/material.dart';
-import '../../models/Device.dart';
+import '../../models/device.dart';
 
 
 class DeviceCard extends StatefulWidget {
@@ -8,10 +9,10 @@ class DeviceCard extends StatefulWidget {
   final Function(Device) onDeviceUpdated;
 
   const DeviceCard({
-    Key? key,
+    super.key,
     required this.device,
     required this.onDeviceUpdated,
-  }) : super(key: key);
+  });
 
   @override
   State<DeviceCard> createState() => _DeviceCardState();
@@ -37,7 +38,7 @@ class _DeviceCardState extends State<DeviceCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -73,19 +74,33 @@ class _DeviceCardState extends State<DeviceCard> {
             ),
             const Divider(),
             const Text('Độ sáng:'),
-            Slider(
+            AnimatedSlider(
               value: brightness,
-              min: 0.0,
-              max: 1.0,
-              divisions: 10,
-              label: '${(brightness * 100).round()}%',
-              onChanged: (value) {
+              barColor: Colors.grey[300]!,
+              rightFillColor: Colors.grey[400]!,
+              leftFillColor: Colors.greenAccent,
+              height: 12,
+              barWidth: 12,
+              onChange: (value) {
                 setState(() {
                   brightness = value;
                 });
                 _updateDevice();
               },
             ),
+            // Slider(
+            //   value: brightness,
+            //   min: 0.0,
+            //   max: 1.0,
+            //   divisions: 10,
+            //   label: '${(brightness * 100).round()}%',
+            //   onChanged: (value) {
+            //     setState(() {
+            //       brightness = value;
+            //     });
+            //     _updateDevice();
+            //   },
+            // ),
           ],
         ),
       ),
