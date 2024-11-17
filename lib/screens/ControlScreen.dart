@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ControlScreen extends StatefulWidget {
+  const ControlScreen({super.key});
+
   @override
   _ControlScreen createState() => _ControlScreen();
 }
@@ -18,13 +19,13 @@ class _ControlScreen extends State<ControlScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
             "Điều khiển",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             Center(
@@ -34,7 +35,7 @@ class _ControlScreen extends State<ControlScreen>{
                 ),
                 elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -42,7 +43,7 @@ class _ControlScreen extends State<ControlScreen>{
                         title: "Nhiệt độ",
                         controls: [
                           SwitchListTile(
-                            title: Text("Bật/Tắt cảm biến nhiệt độ"),
+                            title: const Text("Bật/Tắt cảm biến nhiệt độ"),
                             value: isTemperatureEnable,
                             onChanged: (bool value) {
                               setState(() {
@@ -53,7 +54,7 @@ class _ControlScreen extends State<ControlScreen>{
                           ElevatedButton(
                             onPressed: () {
                             },
-                            child: Text("Khởi tạo lại đo nhiệt độ"),
+                            child: const Text("Khởi tạo lại đo nhiệt độ"),
                           ),
                         ],
                       )
@@ -69,7 +70,7 @@ class _ControlScreen extends State<ControlScreen>{
                 ),
                 elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -77,7 +78,7 @@ class _ControlScreen extends State<ControlScreen>{
                         title: "Ánh sáng",
                         controls: [
                           SwitchListTile(
-                            title: Text("Bật/Tắt cảm biến ánh sáng"),
+                            title: const Text("Bật/Tắt cảm biến ánh sáng"),
                             value: isLightEnabled,
                             onChanged: (bool value) {
                               setState(() {
@@ -88,7 +89,7 @@ class _ControlScreen extends State<ControlScreen>{
                           ElevatedButton(
                             onPressed: () {
                             },
-                            child: Text("Khởi tạo lại đo ánh sáng"),
+                            child: const Text("Khởi tạo lại đo ánh sáng"),
                           ),
                         ],
                       )
@@ -104,7 +105,7 @@ class _ControlScreen extends State<ControlScreen>{
                 ),
                 elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -112,7 +113,7 @@ class _ControlScreen extends State<ControlScreen>{
                         title: "Độ ẩm",
                         controls: [
                           SwitchListTile(
-                            title: Text("Bật/Tắt cảm biến độ ẩm"),
+                            title: const Text("Bật/Tắt cảm biến độ ẩm"),
                             value: isHumidityEnable,
                             onChanged: (bool value) {
                               setState(() {
@@ -123,7 +124,7 @@ class _ControlScreen extends State<ControlScreen>{
                           ElevatedButton(
                             onPressed: () {
                             },
-                            child: Text("Khởi tạo lại đo độ ẩm"),
+                            child: const Text("Khởi tạo lại đo độ ẩm"),
                           ),
                         ],
                       )
@@ -139,7 +140,7 @@ class _ControlScreen extends State<ControlScreen>{
                 ),
                 elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -147,7 +148,7 @@ class _ControlScreen extends State<ControlScreen>{
                         title: "Khoảng cách",
                         controls: [
                           SwitchListTile(
-                            title: Text("Bật/Tắt cảm biến khoảng cách"),
+                            title: const Text("Bật/Tắt cảm biến khoảng cách"),
                             value: isDistanceEnable,
                             onChanged: (bool value) {
                               setState(() {
@@ -158,7 +159,7 @@ class _ControlScreen extends State<ControlScreen>{
                           ElevatedButton(
                             onPressed: () {
                             },
-                            child: Text("Khởi tạo lại đo khoảng cách"),
+                            child: const Text("Khởi tạo lại đo khoảng cách"),
                           ),
                         ],
                       )
@@ -174,7 +175,7 @@ class _ControlScreen extends State<ControlScreen>{
                 ),
                 elevation: 4,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -182,7 +183,7 @@ class _ControlScreen extends State<ControlScreen>{
                         title: "Mưc nước",
                         controls: [
                           SwitchListTile(
-                            title: Text("Bật/Tắt cảm biến mực nước"),
+                            title: const Text("Bật/Tắt cảm biến mực nước"),
                             value: isWaterLevelEnabled,
                             onChanged: (bool value) {
                               setState(() {
@@ -220,7 +221,7 @@ class SensorControl extends StatelessWidget {
   final String title;
   final List<Widget> controls;
 
-  SensorControl({required this.title, required this.controls});
+  const SensorControl({super.key, required this.title, required this.controls});
 
   @override
   Widget build(BuildContext context) {
@@ -229,9 +230,9 @@ class SensorControl extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         ...controls,
       ],
     );

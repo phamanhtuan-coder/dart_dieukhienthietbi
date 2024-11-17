@@ -3,6 +3,8 @@ import 'package:test_embedded_management/models/SensorData.dart';
 import 'package:test_embedded_management/services/SensorDataProvider.dart';
 
 class InfoScreen extends StatefulWidget {
+  const InfoScreen({super.key});
+
   @override
   _SensorInfoScreenState createState() => _SensorInfoScreenState();
 }
@@ -13,6 +15,7 @@ class _SensorInfoScreenState extends State<InfoScreen>{
 
   @override
   void initState() {
+    super.initState();
     setState(() {
       data = dataProvider.getSensorDate();
     });
@@ -22,13 +25,13 @@ class _SensorInfoScreenState extends State<InfoScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Thông tin cảm biến",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           SensorTile(iconData: Icons.thermostat, label: 'Nhiệt độ', value: '${data.temperature}°C'),
           SensorTile(iconData: Icons.wb_sunny, label: 'Ánh sáng', value: '${data.light} lux'),
@@ -46,7 +49,7 @@ class SensorTile extends StatelessWidget {
   final String label;
   final String value;
 
-  SensorTile({
+  const SensorTile({super.key,
     required this.iconData,
     required this.label,
     required this.value
@@ -56,9 +59,9 @@ class SensorTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: Icon(iconData, size: 30, color: Color(0xFF614C99)),
-        title: Text(label, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        trailing: Text(value, style: TextStyle(fontSize: 16),),
+        leading: Icon(iconData, size: 30, color: const Color(0xFF614C99)),
+        title: Text(label, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        trailing: Text(value, style: const TextStyle(fontSize: 16),),
       ),
     );
   }

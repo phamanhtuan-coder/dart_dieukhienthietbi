@@ -4,6 +4,8 @@ import 'package:motion_tab_bar/MotionTabBarController.dart';
 import 'TabView.dart';
 
 class MyTabBarWidget extends StatefulWidget {
+  const MyTabBarWidget({super.key});
+
   @override
   _MyTabBarWidgetState createState() => _MyTabBarWidgetState();
 }
@@ -48,10 +50,10 @@ class _MyTabBarWidgetState extends State<MyTabBarWidget> with SingleTickerProvid
           color: Colors.black,
           fontWeight: FontWeight.w500,
         ),
-        tabIconColor: Color(0xFF644E9E),
+        tabIconColor: const Color(0xFF644E9E),
         tabIconSize: 28.0,
         tabIconSelectedSize: 26.0,
-        tabSelectedColor: Color(0xFF331052),
+        tabSelectedColor: const Color(0xFF331052),
         tabIconSelectedColor: Colors.white,
         tabBarColor: Colors.white,
         onTabItemSelected: (int value) {

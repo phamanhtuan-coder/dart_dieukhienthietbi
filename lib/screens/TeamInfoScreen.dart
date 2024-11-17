@@ -14,7 +14,7 @@ class TeamInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
             'Thông tin nhóm',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -24,26 +24,26 @@ class TeamInfoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
+            const Center(
               child: Text(
                 'Nhóm Anh Tuấn',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 8),
-            Center(
+            const SizedBox(height: 8),
+            const Center(
               child: Text(
                 'Mô tả',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Thành viên:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Expanded(
               child: ListView.builder(
                 itemCount: members.length,
@@ -51,8 +51,8 @@ class TeamInfoScreen extends StatelessWidget {
                   final member = members[index];
                   return Card(
                     child: ListTile(
-                      title: Text(member.name, style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),),
-                      subtitle: Text(member.role, style: TextStyle(fontSize: 15)),
+                      title: Text(member.name, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),),
+                      subtitle: Text(member.role, style: const TextStyle(fontSize: 15)),
                     ),
                   );
                 },

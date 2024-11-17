@@ -8,11 +8,11 @@ class StatisticsScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Thông tin cảm biến",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          bottom: TabBar(
+          bottom: const TabBar(
             isScrollable: true,
             tabs: [
               Tab(text: "Nhiệt độ"),
@@ -45,7 +45,7 @@ class AttributeStatistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       children: [
         SectionHeader(title: "$attributeName - Biểu đồ tròn"),
         PieChartWidget(attributeName: attributeName),
@@ -69,7 +69,7 @@ class SectionHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -128,7 +128,7 @@ class BarChartWidget extends StatelessWidget {
               barRods: [BarChartRodData(toY: 15, color: Colors.red)],
             ),
           ],
-          titlesData: FlTitlesData(
+          titlesData: const FlTitlesData(
             leftTitles: AxisTitles(
               sideTitles: SideTitles(showTitles: true),
             ),
@@ -146,7 +146,7 @@ class BarChartWidget extends StatelessWidget {
 class LineChartWidget extends StatelessWidget {
   final String attributeName;
 
-  LineChartWidget({required this.attributeName});
+  const LineChartWidget({super.key, required this.attributeName});
 
   @override
   Widget build(BuildContext context) {
@@ -158,8 +158,8 @@ class LineChartWidget extends StatelessWidget {
           maxX: 5,
           minY: 0,
           maxY: 4,
-          gridData: FlGridData(show: true),
-          titlesData: FlTitlesData(
+          gridData: const FlGridData(show: true),
+          titlesData: const FlTitlesData(
             leftTitles: AxisTitles(
               sideTitles: SideTitles(showTitles: true),
             ),
@@ -171,14 +171,14 @@ class LineChartWidget extends StatelessWidget {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 1),
-                FlSpot(1, 2.8),
-                FlSpot(2, 1.2),
-                FlSpot(3, 2.8),
-                FlSpot(4, 3.5),
+                const FlSpot(0, 1),
+                const FlSpot(1, 2.8),
+                const FlSpot(2, 1.2),
+                const FlSpot(3, 2.8),
+                const FlSpot(4, 3.5),
               ],
               isCurved: true,
-              gradient: LinearGradient(colors: [Colors.blue, Colors.green]),
+              gradient: const LinearGradient(colors: [Colors.blue, Colors.green]),
               barWidth: 4,
               belowBarData: BarAreaData(show: false),
             ),
@@ -188,4 +188,3 @@ class LineChartWidget extends StatelessWidget {
     );
   }
 }
-
