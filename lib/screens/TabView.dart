@@ -7,8 +7,8 @@ import 'TeamInfoScreen.dart';
 List<Widget> getTabViews() {
   return [
     const InfoScreen(),
-    StatisticsScreen(),
+    const StatisticsScreen(),
     const ControlScreen(),
-    TeamInfoScreen(),
+     TeamInfoScreen(),
   ];
 }

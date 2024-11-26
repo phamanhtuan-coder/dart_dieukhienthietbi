@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class StatisticsScreen extends StatelessWidget {
+  const StatisticsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,7 +25,7 @@ class StatisticsScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             AttributeStatistics(attributeName: "Nhiệt độ"),
             AttributeStatistics(attributeName: "Ánh sáng"),
@@ -40,7 +42,7 @@ class StatisticsScreen extends StatelessWidget {
 class AttributeStatistics extends StatelessWidget {
   final String attributeName;
 
-  AttributeStatistics({required this.attributeName});
+  const AttributeStatistics({super.key, required this.attributeName});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class AttributeStatistics extends StatelessWidget {
 class SectionHeader extends StatelessWidget {
   final String title;
 
-  SectionHeader({required this.title});
+  const SectionHeader({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +80,11 @@ class SectionHeader extends StatelessWidget {
 class PieChartWidget extends StatelessWidget {
   final String attributeName;
 
-  PieChartWidget({required this.attributeName});
+  const PieChartWidget({super.key, required this.attributeName});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: PieChart(
         PieChartData(
@@ -102,11 +104,11 @@ class PieChartWidget extends StatelessWidget {
 class BarChartWidget extends StatelessWidget {
   final String attributeName;
 
-  BarChartWidget({required this.attributeName});
+  const BarChartWidget({super.key, required this.attributeName});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: BarChart(
         BarChartData(
@@ -150,7 +152,7 @@ class LineChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: LineChart(
         LineChartData(

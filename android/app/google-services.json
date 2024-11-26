@@ -23,25 +23,6 @@
           "other_platform_oauth_client": []
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:357266245281:android:f8acbbe219304ac5b7d2e0",
-        "android_client_info": {
-          "package_name": "com.nhomanhtuan.dieukhienthietbi"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB9BX1OwHhOcKPRHJfPX_dxeVNKA9PV2cI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
     }
   ],
   "configuration_version": "1"

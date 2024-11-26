@@ -10,6 +10,8 @@ class TeamInfoScreen extends StatelessWidget {
     Member(name: 'Nguyễn Mạnh Cường - 0306221309', role: 'Thành viên'),
   ];
 
+   TeamInfoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -37,7 +37,7 @@ class _MyTabBarWidgetState extends State<MyTabBarWidget> with SingleTickerProvid
         initialSelectedTab: "Thông tin",
         labels: const ["Thông tin", "Thống kê", "Điều khiển", "Thông tin nhóm"],
         icons: const [Icons.info, Icons.bar_chart, Icons.settings, Icons.group],
-        badges: [
+        badges: const [
           null,
           null,
           null,
